@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dante Barbershop — classic cuts, modern style. Premium grooming, hot towel shaves, and sharp fades in the heart of the city. Book your chair today." />
+  <meta name="description" content="Dante Barbershop (ደንቴ) — classic cuts, modern style in Toronto. Sharp fades, beard work and kids' cuts at 125 Monarch Park Ave. Book online via BarberBook." />
   <title>Dante Barbershop — Classic Cuts, Modern Style</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Diagonal stripe band (brand motif) -->
+  <div class="stripe-band" aria-hidden="true"></div>
+
   <!-- Top bar -->
   <div class="topbar">
     <span>★ Walk-ins welcome · Appointments preferred ★</span>
@@ -20,8 +23,8 @@
   <header class="nav" id="nav">
     <div class="nav__inner container">
       <a href="#home" class="brand" aria-label="Dante Barbershop home">
-        <span class="brand__pole" aria-hidden="true"></span>
-        <span class="brand__name">DANTE<small>BARBERSHOP</small></span>
+        <span class="brand__badge"><img src="assets/logo.png" alt="Dante Barbershop logo" width="48" height="48" /></span>
+        <span class="brand__name"><b>DANTE <i lang="am">ደንቴ</i></b><small>BARBERSHOP</small></span>
       </a>
       <nav class="nav__links" aria-label="Primary">
         <a href="#services">Services</a>
@@ -30,7 +33,7 @@
         <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a href="https://barberbook.ca" target="_blank" rel="noopener" class="btn btn--gold nav__cta">Book Now</a>
+      <a href="https://barberbook.ca" target="_blank" rel="noopener" class="btn btn--accent nav__cta">Book Now</a>
       <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -41,11 +44,11 @@
   <section class="hero" id="home">
     <div class="hero__overlay"></div>
     <div class="hero__content container">
-      <p class="hero__eyebrow">Est. 2014 · Downtown</p>
+      <p class="hero__eyebrow">Est. 2014 · Toronto</p>
       <h1 class="hero__title">Sharp Looks.<br />Timeless Confidence.</h1>
       <p class="hero__sub">Where the craft of the classic barber meets modern style. Precision cuts, sharp beard work, and a chair that feels like home.</p>
       <div class="hero__actions">
-        <a href="https://barberbook.ca" target="_blank" rel="noopener" class="btn btn--gold">Book Your Chair</a>
+        <a href="https://barberbook.ca" target="_blank" rel="noopener" class="btn btn--accent">Book Your Chair</a>
         <a href="#services" class="btn btn--ghost">View Services</a>
       </div>
       <div class="hero__stats">
@@ -113,7 +116,7 @@
           <li>Premium products &amp; single-use blades</li>
           <li>A drink on the house while you wait</li>
         </ul>
-        <a href="#contact" class="btn btn--gold">Visit the Shop</a>
+        <a href="#contact" class="btn btn--accent">Visit the Shop</a>
       </div>
     </div>
   </section>
@@ -165,44 +168,59 @@
 
   <!-- Contact / Booking -->
   <section class="section contact" id="contact">
-    <div class="container contact__grid">
-      <div class="contact__info">
-        <p class="section__eyebrow">Come through</p>
-        <h2 class="section__title">Book Your Chair</h2>
-        <p class="contact__lead">Book online through BarberBook or give us a ring. Walk-ins are always welcome when a chair's open.</p>
-        <ul class="contact__details">
-          <li><strong>Booking</strong> <a href="https://barberbook.ca" target="_blank" rel="noopener">barberbook.ca</a></li>
-          <li><strong>Address</strong> 142 Vine Street, Downtown</li>
-          <li><strong>Phone</strong> <a href="tel:+15551234567">(555) 123-4567</a></li>
-          <li><strong>Email</strong> <a href="mailto:hello@dantebarbershop.com">hello@dantebarbershop.com</a></li>
-        </ul>
-        <ul class="contact__hours">
-          <li><span>Mon – Fri</span><span>9:00 — 19:00</span></li>
-          <li><span>Saturday</span><span>9:00 — 17:00</span></li>
-          <li><span>Sunday</span><span>Closed</span></li>
-        </ul>
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__info">
+          <p class="section__eyebrow">Come through</p>
+          <h2 class="section__title">Book Your Chair</h2>
+          <p class="contact__lead">Book online through BarberBook or give us a ring. Walk-ins are always welcome when a chair's open.</p>
+          <ul class="contact__details">
+            <li><strong>Booking</strong> <a href="https://barberbook.ca" target="_blank" rel="noopener">barberbook.ca</a></li>
+            <li><strong>Address</strong> 125 Monarch Park Ave, Toronto</li>
+            <li><strong>Phone</strong> <a href="tel:+14374287004">+1 (437) 428 7004</a></li>
+            <li><strong>Email</strong> <a href="mailto:teklegebremariyam@gmail.com">teklegebremariyam@gmail.com</a></li>
+            <li><strong>Instagram</strong> <a href="https://instagram.com/dante_barbershop" target="_blank" rel="noopener">@dante_barbershop</a></li>
+          </ul>
+          <ul class="contact__hours">
+            <li><span>Mon – Fri</span><span>9:00 — 19:00</span></li>
+            <li><span>Saturday</span><span>9:00 — 17:00</span></li>
+            <li><span>Sunday</span><span>Closed</span></li>
+          </ul>
+        </div>
+        <div class="booking">
+          <span class="booking__badge">Online Booking</span>
+          <h3>Book Through BarberBook</h3>
+          <p class="booking__lead">We handle all appointments through our booking partner, <strong>BarberBook</strong>. Pick your barber, service and time — confirmation lands instantly in your inbox.</p>
+          <ul class="booking__perks">
+            <li>Real-time chair availability</li>
+            <li>Choose your barber &amp; service</li>
+            <li>Instant confirmation &amp; reminders</li>
+          </ul>
+          <a href="https://barberbook.ca" target="_blank" rel="noopener" class="btn btn--accent btn--block">Book on BarberBook ↗</a>
+          <p class="booking__note">Opens <a href="https://barberbook.ca" target="_blank" rel="noopener">barberbook.ca</a> in a new tab. Prefer to talk? Call <a href="tel:+14374287004">+1 (437) 428 7004</a>.</p>
+        </div>
       </div>
-      <div class="booking">
-        <span class="booking__badge">Online Booking</span>
-        <h3>Book Through BarberBook</h3>
-        <p class="booking__lead">We handle all appointments through our booking partner, <strong>BarberBook</strong>. Pick your barber, service and time — confirmation lands instantly in your inbox.</p>
-        <ul class="booking__perks">
-          <li>Real-time chair availability</li>
-          <li>Choose your barber &amp; service</li>
-          <li>Instant confirmation &amp; reminders</li>
-        </ul>
-        <a href="https://barberbook.ca" target="_blank" rel="noopener" class="btn btn--gold btn--block">Book on BarberBook ↗</a>
-        <p class="booking__note">Opens <a href="https://barberbook.ca" target="_blank" rel="noopener">barberbook.ca</a> in a new tab. Prefer to talk? Call <a href="tel:+15551234567">(555) 123-4567</a>.</p>
+
+      <div class="cardshow">
+        <p class="cardshow__label">Grab a card</p>
+        <div class="cardshow__cards">
+          <img src="assets/card-front.png" alt="Dante Barbershop business card with contact details" loading="lazy" />
+          <img src="assets/card-back.png" alt="Dante Barbershop business card with logo" loading="lazy" />
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- Diagonal stripe band (brand motif) -->
+  <div class="stripe-band" aria-hidden="true"></div>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <span class="brand__name">DANTE<small>BARBERSHOP</small></span>
+        <span class="brand__name"><b>DANTE <i lang="am">ደንቴ</i></b><small>BARBERSHOP</small></span>
         <p>Classic cuts, modern style. Since 2014.</p>
+        <p class="footer__addr">125 Monarch Park Ave, Toronto · <a href="tel:+14374287004">+1 (437) 428 7004</a></p>
       </div>
       <nav class="footer__links" aria-label="Footer">
         <a href="#services">Services</a>
@@ -211,9 +229,9 @@
         <a href="#contact">Contact</a>
       </nav>
       <div class="footer__social">
-        <a href="#" aria-label="Instagram">Instagram</a>
-        <a href="#" aria-label="Facebook">Facebook</a>
-        <a href="#" aria-label="TikTok">TikTok</a>
+        <a href="https://instagram.com/dante_barbershop" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://barberbook.ca" target="_blank" rel="noopener">Book Online</a>
+        <a href="mailto:teklegebremariyam@gmail.com">Email Us</a>
       </div>
     </div>
     <div class="footer__bottom container">

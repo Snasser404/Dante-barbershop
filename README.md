@@ -2,14 +2,28 @@
 
 A modern, responsive single-page landing site for **Dante Barbershop**: classic cuts, modern style.
 
+## Brand
+
+The site follows the shop's business-card identity:
+
+- **Logo** — the barber-pole emblem with scissors, razor, and the Amharic
+  wordmark **ደንቴ** (`assets/logo.png`, extracted from the business card).
+- **Colors** — blue accent (`--accent: #2e7db0`) on a dark base, with the
+  classic red/white/blue barber pole and a diagonal blue/black stripe motif
+  echoing the card border.
+- **Business cards** — both sides are showcased in the Contact section
+  (`assets/card-front.png`, `assets/card-back.png`).
+
 ## Sections
 
 - **Hero** — headline, call-to-action, and key stats
-- **Services & Pricing** — six service cards with prices and durations
+- **Services & Pricing** — the shop's real menu (For Kids $25, For Adults
+  $30, Haircut with Beard $35, Lineup with Beard $20, Black Color $20)
 - **About** — the shop's story with an animated barber pole
 - **Gallery** — a hover-reveal grid of featured work
 - **Reviews** — customer testimonials
-- **Booking / Contact** — online booking via [BarberBook](https://barberbook.ca), address, hours, and contact details
+- **Booking / Contact** — online booking via [BarberBook](https://barberbook.ca),
+  address, hours, contact details, and the business-card showcase
 - **Footer** — navigation and social links
 
 ## Tech
@@ -19,6 +33,7 @@ Plain HTML, CSS, and vanilla JavaScript — no build step, no dependencies.
 - `index.html` — page markup
 - `styles.css` — design tokens, layout, and responsive rules
 - `script.js` — sticky nav, mobile menu, and scroll reveals
+- `assets/` — logo and business-card images
 
 Fonts are loaded from Google Fonts (Bebas Neue, Oswald, Cormorant Garamond).
 
