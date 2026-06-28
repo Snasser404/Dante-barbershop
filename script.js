@@ -9,7 +9,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 //    Leave it "" to fall back to a Google Maps search for the shop.
 //  - rating / count: update to match your real Google numbers (shown on the badge).
 const GOOGLE = {
-  placeId: "", // e.g. "ChIJN1t_tDeuEmsRUsoyG83frY4"
+  placeId: "ChIJNRrYNwDN1IkRWXqKAmp2KGY",
   name: "Dante Barbershop",
   address: "125 Monarch Park Ave, Toronto",
   rating: "4.9",
