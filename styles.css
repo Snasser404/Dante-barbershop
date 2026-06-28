@@ -493,11 +493,39 @@ ul { list-style: none; padding: 0; }
   padding: 36px 32px;
   box-shadow: var(--shadow);
 }
+.booking__badge {
+  display: inline-block;
+  background: rgba(200, 162, 76, 0.14);
+  color: var(--gold-bright);
+  border: 1px solid rgba(200, 162, 76, 0.4);
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+}
 .booking h3 {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 1.7rem;
+  font-size: 2rem;
   letter-spacing: 0.04em;
-  margin-bottom: 22px;
+  margin-bottom: 14px;
+}
+.booking__lead { color: var(--muted); margin-bottom: 22px; }
+.booking__lead strong { color: var(--gold-bright); font-weight: 500; }
+.booking__perks { display: grid; gap: 12px; margin-bottom: 28px; }
+.booking__perks li {
+  position: relative;
+  padding-left: 30px;
+  font-size: 0.95rem;
+  color: var(--cream);
+}
+.booking__perks li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--gold-bright);
+  font-weight: 700;
 }
 .booking__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .booking label {
@@ -534,13 +562,14 @@ ul { list-style: none; padding: 0; }
 }
 .booking textarea { resize: vertical; }
 .booking__note {
-  margin-top: 14px;
+  margin-top: 16px;
   font-size: 0.85rem;
-  letter-spacing: 0.04em;
-  color: var(--gold-bright);
-  min-height: 20px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
   text-align: center;
 }
+.booking__note a { color: var(--gold-bright); }
+.booking__note a:hover { text-decoration: underline; }
 
 /* ===== Footer ===== */
 .footer { background: var(--black); border-top: 1px solid var(--line); padding-top: 56px; }

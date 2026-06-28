@@ -46,26 +46,3 @@ if ("IntersectionObserver" in window) {
   revealTargets.forEach((el) => el.classList.add("in"));
 }
 
-// Prevent past dates in the booking form
-const dateInput = document.querySelector('input[name="date"]');
-if (dateInput) {
-  dateInput.min = new Date().toISOString().split("T")[0];
-}
-
-// Booking form (front-end demo — no backend)
-const form = document.getElementById("bookingForm");
-const note = document.getElementById("bookingNote");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  if (!form.checkValidity()) {
-    note.style.color = "#e08b6b";
-    note.textContent = "Please fill in your name, phone, service and date.";
-    form.reportValidity();
-    return;
-  }
-  const name = form.elements["name"].value.trim().split(" ")[0];
-  note.style.color = "";
-  note.textContent = `Thanks${name ? ", " + name : ""}! We'll text you to confirm your chair. ✂`;
-  form.reset();
-  if (dateInput) dateInput.min = new Date().toISOString().split("T")[0];
-});

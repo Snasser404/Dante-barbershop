@@ -30,7 +30,7 @@
         <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a href="#contact" class="btn btn--gold nav__cta">Book Now</a>
+      <a href="https://barberbook.ca" target="_blank" rel="noopener" class="btn btn--gold nav__cta">Book Now</a>
       <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -45,7 +45,7 @@
       <h1 class="hero__title">Sharp Looks.<br />Timeless Confidence.</h1>
       <p class="hero__sub">Where the craft of the classic barber meets modern style. Precision cuts, hot-towel shaves, and a chair that feels like home.</p>
       <div class="hero__actions">
-        <a href="#contact" class="btn btn--gold">Book Your Chair</a>
+        <a href="https://barberbook.ca" target="_blank" rel="noopener" class="btn btn--gold">Book Your Chair</a>
         <a href="#services" class="btn btn--ghost">View Services</a>
       </div>
       <div class="hero__stats">
@@ -174,8 +174,9 @@
       <div class="contact__info">
         <p class="section__eyebrow">Come through</p>
         <h2 class="section__title">Book Your Chair</h2>
-        <p class="contact__lead">Reserve a time below or give us a ring. Walk-ins are always welcome when a chair's open.</p>
+        <p class="contact__lead">Book online through BarberBook or give us a ring. Walk-ins are always welcome when a chair's open.</p>
         <ul class="contact__details">
+          <li><strong>Booking</strong> <a href="https://barberbook.ca" target="_blank" rel="noopener">barberbook.ca</a></li>
           <li><strong>Address</strong> 142 Vine Street, Downtown</li>
           <li><strong>Phone</strong> <a href="tel:+15551234567">(555) 123-4567</a></li>
           <li><strong>Email</strong> <a href="mailto:hello@dantebarbershop.com">hello@dantebarbershop.com</a></li>
@@ -186,38 +187,18 @@
           <li><span>Sunday</span><span>Closed</span></li>
         </ul>
       </div>
-      <form class="booking" id="bookingForm" novalidate>
-        <h3>Request an Appointment</h3>
-        <div class="booking__row">
-          <label>Name
-            <input type="text" name="name" required placeholder="John Doe" />
-          </label>
-          <label>Phone
-            <input type="tel" name="phone" required placeholder="(555) 000-0000" />
-          </label>
-        </div>
-        <div class="booking__row">
-          <label>Service
-            <select name="service" required>
-              <option value="" disabled selected>Choose a service</option>
-              <option>Classic Cut</option>
-              <option>Skin Fade</option>
-              <option>Beard Sculpt</option>
-              <option>Hot Towel Shave</option>
-              <option>Cut &amp; Beard Combo</option>
-              <option>The Young Don</option>
-            </select>
-          </label>
-          <label>Preferred date
-            <input type="date" name="date" required />
-          </label>
-        </div>
-        <label>Notes
-          <textarea name="notes" rows="3" placeholder="Any preferences or your usual barber?"></textarea>
-        </label>
-        <button type="submit" class="btn btn--gold btn--block">Send Request</button>
-        <p class="booking__note" id="bookingNote" role="status"></p>
-      </form>
+      <div class="booking">
+        <span class="booking__badge">Online Booking</span>
+        <h3>Book Through BarberBook</h3>
+        <p class="booking__lead">We handle all appointments through our booking partner, <strong>BarberBook</strong>. Pick your barber, service and time — confirmation lands instantly in your inbox.</p>
+        <ul class="booking__perks">
+          <li>Real-time chair availability</li>
+          <li>Choose your barber &amp; service</li>
+          <li>Instant confirmation &amp; reminders</li>
+        </ul>
+        <a href="https://barberbook.ca" target="_blank" rel="noopener" class="btn btn--gold btn--block">Book on BarberBook ↗</a>
+        <p class="booking__note">Opens <a href="https://barberbook.ca" target="_blank" rel="noopener">barberbook.ca</a> in a new tab. Prefer to talk? Call <a href="tel:+15551234567">(555) 123-4567</a>.</p>
+      </div>
     </div>
   </section>
 
