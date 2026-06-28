@@ -3,13 +3,27 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 // ===== Google reviews =====
 // Wire up your real Google Business Profile here.
-//  - placeId: your Google Place ID (find it at
-//    https://developers.google.com/maps/documentation/places/web-service/place-id).
-//    When set, the buttons deep-link straight to reading/writing a Google review.
-//    Leave it "" to fall back to a Google Maps search for the shop.
-//  - rating / count: update to match your real Google numbers (shown on the badge).
+//
+//  placeId  Your Google Place ID. Powers the "Read"/"Leave a review" deep links.
+//
+//  apiKey   A Google Places API (New) key. When set, the badge rating, review
+//           count and the review cards auto-update live from Google. Leave it ""
+//           to keep the static fallback below.
+//           Setup:
+//             1. console.cloud.google.com -> create/select a project
+//             2. Enable "Places API (New)" and turn on billing
+//             3. APIs & Services -> Credentials -> Create API key
+//             4. Restrict the key:
+//                  Application restrictions -> HTTP referrers, add:
+//                     https://snasser404.github.io/*   (+ your custom domain, + http://localhost:*)
+//                  API restrictions -> restrict to "Places API (New)"
+//             5. Paste the key below. (A referrer-restricted key is safe to ship
+//                client-side — it only works from your own domains.)
+//
+//  rating / count  Static fallback shown until the live data loads (or if no apiKey).
 const GOOGLE = {
   placeId: "ChIJNRrYNwDN1IkRWXqKAmp2KGY",
+  apiKey: "",
   name: "Dante Barbershop",
   address: "125 Monarch Park Ave, Toronto",
   rating: "4.9",
@@ -19,23 +33,106 @@ const GOOGLE = {
 (function setupGoogleReviews() {
   const readBtn = document.getElementById("googleReadBtn");
   const writeBtn = document.getElementById("googleWriteBtn");
-  if (!readBtn || !writeBtn) return;
-
   const ratingEl = document.getElementById("googleRating");
   const countEl = document.getElementById("googleCount");
+  const grid = document.getElementById("reviewsGrid");
+
+  // Deep links / fallback for the badge buttons
+  if (readBtn && writeBtn) {
+    const search =
+      "https://www.google.com/maps/search/?api=1&query=" +
+      encodeURIComponent(GOOGLE.name + ", " + GOOGLE.address);
+    if (GOOGLE.placeId) {
+      readBtn.href = "https://search.google.com/local/reviews?placeid=" + GOOGLE.placeId;
+      writeBtn.href = "https://search.google.com/local/writereview?placeid=" + GOOGLE.placeId;
+    } else {
+      readBtn.href = search;
+      writeBtn.href = search;
+    }
+  }
+
+  // Static fallback numbers
   if (ratingEl && GOOGLE.rating) ratingEl.textContent = GOOGLE.rating;
   if (countEl && GOOGLE.count) countEl.textContent = GOOGLE.count;
 
-  const search =
-    "https://www.google.com/maps/search/?api=1&query=" +
-    encodeURIComponent(GOOGLE.name + ", " + GOOGLE.address);
+  // Live data (only when an API key is configured)
+  if (GOOGLE.apiKey && GOOGLE.placeId) {
+    loadLiveReviews({ ratingEl, countEl, grid });
+  }
 
-  if (GOOGLE.placeId) {
-    readBtn.href = "https://search.google.com/local/reviews?placeid=" + GOOGLE.placeId;
-    writeBtn.href = "https://search.google.com/local/writereview?placeid=" + GOOGLE.placeId;
-  } else {
-    readBtn.href = search;
-    writeBtn.href = search;
+  function loadLiveReviews(els) {
+    const CACHE_KEY = "dante_google_reviews_v1";
+    const TTL = 12 * 60 * 60 * 1000; // 12h — limits billable Places API calls
+
+    function apply(data) {
+      if (typeof data.rating === "number" && els.ratingEl) {
+        els.ratingEl.textContent = data.rating.toFixed(1);
+      }
+      if (typeof data.userRatingCount === "number" && els.countEl) {
+        els.countEl.textContent = data.userRatingCount.toLocaleString();
+      }
+      if (Array.isArray(data.reviews) && data.reviews.length && els.grid) {
+        renderReviews(els.grid, data.reviews);
+      }
+    }
+
+    // Serve from cache when fresh, to avoid an API call on every page load
+    try {
+      const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || "null");
+      if (cached && Date.now() - cached.t < TTL) {
+        apply(cached.d);
+        return;
+      }
+    } catch (e) {
+      /* ignore cache errors */
+    }
+
+    fetch("https://places.googleapis.com/v1/places/" + GOOGLE.placeId, {
+      headers: {
+        "X-Goog-Api-Key": GOOGLE.apiKey,
+        "X-Goog-FieldMask": "rating,userRatingCount,reviews",
+      },
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Places API " + res.status);
+        return res.json();
+      })
+      .then((data) => {
+        try {
+          localStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), d: data }));
+        } catch (e) {
+          /* ignore quota errors */
+        }
+        apply(data);
+      })
+      .catch((err) => console.warn("Live Google reviews unavailable:", err));
+  }
+
+  function renderReviews(grid, reviews) {
+    grid.innerHTML = "";
+    reviews.slice(0, 6).forEach((r) => {
+      const card = document.createElement("blockquote");
+      card.className = "review reveal in";
+
+      const stars = document.createElement("div");
+      stars.className = "review__stars";
+      const n = Math.round(r.rating || 5);
+      stars.textContent = "★★★★★".slice(0, n) + "☆☆☆☆☆".slice(0, 5 - n);
+      card.appendChild(stars);
+
+      const text = document.createElement("p");
+      const body = (r.text && r.text.text) || (r.originalText && r.originalText.text) || "";
+      text.textContent = "“" + body + "”";
+      card.appendChild(text);
+
+      const cite = document.createElement("cite");
+      const who = (r.authorAttribution && r.authorAttribution.displayName) || "Google reviewer";
+      const when = r.relativePublishTimeDescription ? " · " + r.relativePublishTimeDescription : "";
+      cite.textContent = "— " + who + when;
+      card.appendChild(cite);
+
+      grid.appendChild(card);
+    });
   }
 })();
 

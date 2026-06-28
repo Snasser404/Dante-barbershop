@@ -52,3 +52,22 @@ Appointments are handled by the shop's booking partner, **BarberBook**.
 All "Book" buttons and the booking panel link out to
 [barberbook.ca](https://barberbook.ca). To change the destination, update
 the `https://barberbook.ca` links in `index.html`.
+
+## Google reviews
+
+The Reviews section has a Google rating badge with **Read Reviews** and
+**Leave a Review** buttons, plus optional live review cards. Everything is
+configured in the `GOOGLE` object at the top of `script.js`:
+
+- `placeId` — the shop's Google Place ID. Powers the read/write deep links.
+- `apiKey` — a **Places API (New)** key. When set, the badge rating, review
+  count, and review cards auto-update live from Google (results cached in the
+  browser for 12h to limit billable API calls). Leave it `""` to keep the
+  static fallback reviews and numbers.
+- `rating` / `count` — static fallback values shown until live data loads.
+
+To enable live reviews: create a Google Cloud project, enable **Places API
+(New)** with billing, create an API key, restrict it to your domain(s) by
+HTTP referrer and to the Places API, then paste it into `apiKey`. A
+referrer-restricted key is safe to ship client-side — it only works from
+your own domains.
