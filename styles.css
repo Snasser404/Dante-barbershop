@@ -476,6 +476,41 @@ ul { list-style: none; padding: 0; }
   color: var(--accent);
 }
 
+/* ===== Google reviews badge ===== */
+.goog {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  background: var(--charcoal-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 32px;
+}
+.goog__badge { display: flex; align-items: center; gap: 16px; }
+.goog__g { flex: none; }
+.goog__meta { display: flex; flex-direction: column; gap: 4px; }
+.goog__rate { display: flex; align-items: center; gap: 10px; }
+.goog__rate strong {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--cream);
+}
+.goog__stars { color: var(--accent-bright); letter-spacing: 2px; font-size: 1.05rem; }
+.goog__sub { font-size: 0.86rem; color: var(--muted); }
+.goog__sub strong { color: var(--cream); font-weight: 500; }
+.goog__actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.goog__actions .btn { padding: 12px 24px; }
+
+@media (max-width: 560px) {
+  .goog { flex-direction: column; align-items: flex-start; }
+  .goog__actions { width: 100%; }
+  .goog__actions .btn { flex: 1; text-align: center; }
+}
+
 /* ===== Contact ===== */
 .contact { background: var(--charcoal); }
 .contact__grid {
