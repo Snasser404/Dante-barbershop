@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dante Barbershop — classic cuts, modern style. Premium grooming, hot towel shaves, and sharp fades in the heart of the city. Book your chair today." />
+  <title>Dante Barbershop — Classic Cuts, Modern Style</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Top bar -->
+  <div class="topbar">
+    <span>★ Walk-ins welcome · Appointments preferred ★</span>
+  </div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#home" class="brand" aria-label="Dante Barbershop home">
+        <span class="brand__pole" aria-hidden="true"></span>
+        <span class="brand__name">DANTE<small>BARBERSHOP</small></span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="btn btn--gold nav__cta">Book Now</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero__overlay"></div>
+    <div class="hero__content container">
+      <p class="hero__eyebrow">Est. 2014 · Downtown</p>
+      <h1 class="hero__title">Sharp Looks.<br />Timeless Confidence.</h1>
+      <p class="hero__sub">Where the craft of the classic barber meets modern style. Precision cuts, hot-towel shaves, and a chair that feels like home.</p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--gold">Book Your Chair</a>
+        <a href="#services" class="btn btn--ghost">View Services</a>
+      </div>
+      <div class="hero__stats">
+        <div><strong>10+</strong><span>Years of craft</span></div>
+        <div><strong>15k+</strong><span>Cuts &amp; shaves</span></div>
+        <div><strong>4.9★</strong><span>Average rating</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__eyebrow">What we do</p>
+        <h2 class="section__title">Services &amp; Pricing</h2>
+        <p class="section__lead">Every service includes a consultation, a hot towel, and a finish that lasts past the doorstep.</p>
+      </div>
+      <div class="services__grid">
+        <article class="service-card">
+          <h3>Classic Cut</h3>
+          <p>Scissor &amp; clipper cut tailored to your style, finished with a hot towel and styling.</p>
+          <div class="service-card__foot"><span class="price">$32</span><span class="time">45 min</span></div>
+        </article>
+        <article class="service-card service-card--feature">
+          <span class="service-card__tag">Most Popular</span>
+          <h3>Skin Fade</h3>
+          <p>A seamless taper down to the skin with razor-sharp line work and detailing.</p>
+          <div class="service-card__foot"><span class="price">$40</span><span class="time">50 min</span></div>
+        </article>
+        <article class="service-card">
+          <h3>Beard Sculpt</h3>
+          <p>Shape, line-up and condition. Trimmed to complement your jaw and cut.</p>
+          <div class="service-card__foot"><span class="price">$25</span><span class="time">30 min</span></div>
+        </article>
+        <article class="service-card">
+          <h3>Hot Towel Shave</h3>
+          <p>The traditional straight-razor shave with hot towels, oils and a cooling finish.</p>
+          <div class="service-card__foot"><span class="price">$35</span><span class="time">40 min</span></div>
+        </article>
+        <article class="service-card">
+          <h3>Cut &amp; Beard Combo</h3>
+          <p>The full reset — a complete cut paired with a precision beard sculpt.</p>
+          <div class="service-card__foot"><span class="price">$55</span><span class="time">70 min</span></div>
+        </article>
+        <article class="service-card">
+          <h3>The Young Don</h3>
+          <p>Cuts for kids 12 &amp; under. Same sharp standard, a little extra patience.</p>
+          <div class="service-card__foot"><span class="price">$22</span><span class="time">30 min</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section about" id="about">
+    <div class="container about__grid">
+      <div class="about__media" aria-hidden="true">
+        <div class="about__media-inner">
+          <span class="about__pole"></span>
+        </div>
+      </div>
+      <div class="about__text">
+        <p class="section__eyebrow">Our story</p>
+        <h2 class="section__title">More Than a Haircut</h2>
+        <p>Dante opened his first chair in 2014 with a simple belief: a great cut is part craft, part conversation. A decade on, the shop has grown — but the philosophy hasn't changed.</p>
+        <p>We're old-school where it counts: straight razors, hot towels, and barbers who actually listen. We're modern where it matters: online booking, contemporary styling, and an atmosphere that's as much a retreat as it is a barbershop.</p>
+        <ul class="about__list">
+          <li>Master barbers with 5+ years on the chair</li>
+          <li>Premium products &amp; single-use blades</li>
+          <li>A drink on the house while you wait</li>
+        </ul>
+        <a href="#contact" class="btn btn--gold">Visit the Shop</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__eyebrow">The work</p>
+        <h2 class="section__title">Fresh From the Chair</h2>
+      </div>
+      <div class="gallery__grid">
+        <figure class="gallery__item g1"><span>Skin Fade</span></figure>
+        <figure class="gallery__item g2"><span>Classic Pompadour</span></figure>
+        <figure class="gallery__item g3"><span>Beard Sculpt</span></figure>
+        <figure class="gallery__item g4"><span>Textured Crop</span></figure>
+        <figure class="gallery__item g5"><span>Hot Towel Shave</span></figure>
+        <figure class="gallery__item g6"><span>Sharp Line-Up</span></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section reviews" id="reviews">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__eyebrow">Word on the street</p>
+        <h2 class="section__title">What the Chair Says</h2>
+      </div>
+      <div class="reviews__grid">
+        <blockquote class="review">
+          <div class="review__stars">★★★★★</div>
+          <p>“Best fade in the city, hands down. Dante took the time to get the shape exactly right. I won't go anywhere else.”</p>
+          <cite>— Marcus T.</cite>
+        </blockquote>
+        <blockquote class="review">
+          <div class="review__stars">★★★★★</div>
+          <p>“The hot towel shave is a ritual. Walked out feeling like a new man. The whole place just has good energy.”</p>
+          <cite>— Andre P.</cite>
+        </blockquote>
+        <blockquote class="review">
+          <div class="review__stars">★★★★★</div>
+          <p>“Booked online, in and out in 45 minutes, sharpest I've looked in years. Worth every penny.”</p>
+          <cite>— Leo R.</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Booking -->
+  <section class="section contact" id="contact">
+    <div class="container contact__grid">
+      <div class="contact__info">
+        <p class="section__eyebrow">Come through</p>
+        <h2 class="section__title">Book Your Chair</h2>
+        <p class="contact__lead">Reserve a time below or give us a ring. Walk-ins are always welcome when a chair's open.</p>
+        <ul class="contact__details">
+          <li><strong>Address</strong> 142 Vine Street, Downtown</li>
+          <li><strong>Phone</strong> <a href="tel:+15551234567">(555) 123-4567</a></li>
+          <li><strong>Email</strong> <a href="mailto:hello@dantebarbershop.com">hello@dantebarbershop.com</a></li>
+        </ul>
+        <ul class="contact__hours">
+          <li><span>Mon – Fri</span><span>9:00 — 19:00</span></li>
+          <li><span>Saturday</span><span>9:00 — 17:00</span></li>
+          <li><span>Sunday</span><span>Closed</span></li>
+        </ul>
+      </div>
+      <form class="booking" id="bookingForm" novalidate>
+        <h3>Request an Appointment</h3>
+        <div class="booking__row">
+          <label>Name
+            <input type="text" name="name" required placeholder="John Doe" />
+          </label>
+          <label>Phone
+            <input type="tel" name="phone" required placeholder="(555) 000-0000" />
+          </label>
+        </div>
+        <div class="booking__row">
+          <label>Service
+            <select name="service" required>
+              <option value="" disabled selected>Choose a service</option>
+              <option>Classic Cut</option>
+              <option>Skin Fade</option>
+              <option>Beard Sculpt</option>
+              <option>Hot Towel Shave</option>
+              <option>Cut &amp; Beard Combo</option>
+              <option>The Young Don</option>
+            </select>
+          </label>
+          <label>Preferred date
+            <input type="date" name="date" required />
+          </label>
+        </div>
+        <label>Notes
+          <textarea name="notes" rows="3" placeholder="Any preferences or your usual barber?"></textarea>
+        </label>
+        <button type="submit" class="btn btn--gold btn--block">Send Request</button>
+        <p class="booking__note" id="bookingNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="brand__name">DANTE<small>BARBERSHOP</small></span>
+        <p>Classic cuts, modern style. Since 2014.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer__social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="TikTok">TikTok</a>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>© <span id="year"></span> Dante Barbershop. All rights reserved.</p>
+      <p>Made with sharp scissors &amp; good coffee.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
