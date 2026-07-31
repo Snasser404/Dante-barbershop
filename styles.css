@@ -773,6 +773,17 @@ ul { list-style: none; padding: 0; }
   font-size: 0.8rem;
   letter-spacing: 0.08em;
 }
+.footer__credit a {
+  color: var(--cream);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(46, 125, 176, 0.5);
+  padding-bottom: 1px;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+.footer__credit a:hover {
+  color: var(--accent-bright);
+  border-color: var(--accent-bright);
+}
 
 /* ===== Reveal animation ===== */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }

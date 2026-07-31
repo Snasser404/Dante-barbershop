@@ -54,6 +54,12 @@ All "Book" buttons and the booking panel link out to
 [barberbook.ca](https://barberbook.ca). To change the destination, update
 the `https://barberbook.ca` links in `index.html`.
 
+## Credits
+
+Designed and built by [Manar Digital](https://manaradigital.ca). The credit
+link lives in the footer bottom bar (`.footer__credit`) and the agency is set
+as the document `author` in the `<head>`.
+
 ## Media
 
 All photography and footage is real work from the shop, derived from clips
