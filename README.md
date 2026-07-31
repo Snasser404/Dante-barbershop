@@ -16,11 +16,12 @@ The site follows the shop's business-card identity:
 
 ## Sections
 
-- **Hero** — headline, call-to-action, and key stats
+- **Hero** — headline, call-to-action, and key stats over a looping
+  three-panel video of real shop footage
 - **Services & Pricing** — the shop's real menu (For Kids $25, For Adults
   $30, Haircut with Beard $35, Lineup with Beard $20, Black Color $20)
-- **About** — the shop's story with an animated barber pole
-- **Gallery** — a hover-reveal grid of featured work
+- **About** — the shop's story alongside a looping clip of the detail work
+- **Gallery** — a hover-reveal grid of real cuts from the chair
 - **Reviews** — customer testimonials
 - **Booking / Contact** — online booking via [BarberBook](https://barberbook.ca),
   address, hours, contact details, and the business-card showcase
@@ -52,6 +53,27 @@ Appointments are handled by the shop's booking partner, **BarberBook**.
 All "Book" buttons and the booking panel link out to
 [barberbook.ca](https://barberbook.ca). To change the destination, update
 the `https://barberbook.ca` links in `index.html`.
+
+## Media
+
+All photography and footage is real work from the shop, derived from clips
+supplied by the owner:
+
+- `assets/gallery/cut-*.jpg` — six 3:4 stills used in the Gallery grid.
+- `assets/gallery/about-craft.jpg` — the About still, doubling as the poster
+  frame for the About clip.
+- `assets/video/hero.{webm,mp4}` — a 10s three-panel montage used as the hero
+  background, muted and looping, with `hero-poster.jpg` as the poster.
+- `assets/video/craft.{webm,mp4}` — an 8s vertical clip of the detail work in
+  the About section.
+
+Both videos ship as WebM (VP9) and MP4 (H.264) so every browser gets one, and
+both are muted, looping, and `playsinline`. The About clip only loads and
+plays once it scrolls into view, and `script.js` pauses both when the visitor
+prefers reduced motion, leaving the poster frame visible.
+
+To swap in new media, replace the files above at the same paths and keep the
+aspect ratios (3:4 for gallery stills, 4:5 for the About poster).
 
 ## Google reviews
 

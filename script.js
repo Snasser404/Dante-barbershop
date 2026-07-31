@@ -1,6 +1,39 @@
 // Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// Background videos: respect reduced-motion, and only play the About clip
+// once it scrolls into view so it costs nothing on first paint.
+(function setupVideos() {
+  const videos = Array.from(document.querySelectorAll("video"));
+  if (!videos.length) return;
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    videos.forEach((v) => {
+      v.removeAttribute("autoplay");
+      v.pause();
+    });
+    return;
+  }
+
+  const lazy = document.querySelector(".about__video");
+  if (lazy && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          lazy.preload = "auto";
+          lazy.load();
+          const p = lazy.play();
+          if (p && p.catch) p.catch(() => {});
+          io.disconnect();
+        });
+      },
+      { rootMargin: "200px" }
+    );
+    io.observe(lazy);
+  }
+})();
+
 // ===== Google reviews =====
 // Wire up your real Google Business Profile here.
 //
