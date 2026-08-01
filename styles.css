@@ -772,16 +772,69 @@ ul { list-style: none; padding: 0; }
   font-size: 0.8rem;
   letter-spacing: 0.08em;
 }
-.footer__credit a {
-  color: var(--cream);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(46, 125, 176, 0.5);
-  padding-bottom: 1px;
-  transition: color 0.25s ease, border-color 0.25s ease;
+/* ===== Agency credit bar =====
+   Deliberately quiet: it sits below the shop's footer, uses no accent blue
+   (that colour belongs to the Book buttons) and opens in a new tab so the
+   shop's page is never navigated away from. */
+.agency {
+  background: #000;
+  border-top: 1px solid var(--line);
+  padding: 22px 0;
 }
-.footer__credit a:hover {
-  color: var(--accent-bright);
-  border-color: var(--accent-bright);
+.agency__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.agency__id { display: flex; align-items: center; gap: 14px; }
+.agency__mark {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  border: 1px solid #2a2a2a;
+  background: #121212;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  color: #cfc7bc;
+}
+.agency__line {
+  font-size: 0.86rem;
+  letter-spacing: 0.06em;
+  color: #7d766c;
+}
+.agency__line strong { color: #d8d1c6; font-weight: 500; }
+.agency__tag {
+  margin-top: 2px;
+  font-size: 0.78rem;
+  color: #625c54;
+  letter-spacing: 0.03em;
+}
+.agency__cta {
+  flex: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #a9a299;
+  text-decoration: none;
+  padding: 10px 18px;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+.agency__cta:hover {
+  color: var(--cream);
+  border-color: #4a4a4a;
+  background: #131313;
+}
+@media (max-width: 560px) {
+  .agency__inner { flex-direction: column; align-items: flex-start; }
+  .agency__cta { width: 100%; text-align: center; }
 }
 
 /* ===== Reveal animation ===== */

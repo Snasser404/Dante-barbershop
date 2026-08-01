@@ -58,9 +58,16 @@ links in `index.html`.
 
 ## Credits
 
-Designed and built by [Manar Digital](https://manaradigital.ca). The credit
-link lives in the footer bottom bar (`.footer__credit`) and the agency is set
-as the document `author` in the `<head>`.
+Designed and built by [Manar Digital](https://manaradigital.ca), which is
+also set as the document `author` in the `<head>`.
+
+The credit is an `.agency` bar rendered **after** the shop's footer, so it
+follows every booking call-to-action rather than competing with one. It
+deliberately avoids the accent blue reserved for the Book buttons, and its
+link opens in a new tab so a visitor is never navigated away from the shop.
+The link carries UTM parameters (`utm_source=dante-barbershop`,
+`utm_medium=site-credit`, `utm_campaign=client-sites`) so referrals from this
+site are attributable in the agency's analytics.
 
 ## Media
 
