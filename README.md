@@ -23,7 +23,7 @@ The site follows the shop's business-card identity:
 - **About** — the shop's story alongside a looping clip of the detail work
 - **Gallery** — a hover-reveal grid of real cuts from the chair
 - **Reviews** — customer testimonials
-- **Booking / Contact** — online booking via [BarberBook](https://barberbook.ca),
+- **Booking / Contact** — online booking via [BarberBook](https://barberbook.ca/s/dante-barbershop),
   address, hours, contact details, and the business-card showcase
 - **Footer** — navigation and social links
 
@@ -51,8 +51,10 @@ python3 -m http.server 8000
 
 Appointments are handled by the shop's booking partner, **BarberBook**.
 All "Book" buttons and the booking panel link out to
-[barberbook.ca](https://barberbook.ca). To change the destination, update
-the `https://barberbook.ca` links in `index.html`.
+the shop's page at
+[barberbook.ca/s/dante-barbershop](https://barberbook.ca/s/dante-barbershop).
+To change the destination, update the `https://barberbook.ca/s/dante-barbershop`
+links in `index.html`.
 
 ## Credits
 
